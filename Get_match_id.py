@@ -34,4 +34,3 @@ x = tmp_matchs[1]
 tmp_matchdata = loop.run_until_complete(getTFTmatchInfo(x))["info"]
 print(tmp_matchdata)
 
-

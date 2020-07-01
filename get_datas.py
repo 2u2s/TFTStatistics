@@ -4,12 +4,11 @@ import TFTConstants
 
 ###############################
 server = "kr"
-apikey = "YOUR API KEY"
+apikey = "YOUR_API"
 sleep_time = 1.21
-DEBUG = True
+DEBUG = False
 PRINT_LOG = False
-version = 'Version 10.10.320.3039 (May 07 2020/17:23:49) [PUBLIC] <Releases/10.10>'
-
+version = 'Version 10.12.323.8771 (Jun 04 2020/15:31:11) [PUBLIC] <Releases/10.12>'
 
 ###############################
 
@@ -194,165 +193,31 @@ def make_match_ids_txt():
 ##################################################
 
 def make_meta_dict():
-    return {
-        'Reroll_Void': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'Reroll_Xayah': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'Reroll_Xayah_Fiora': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'Reroll_6sorcerer': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'Refeuling_Sona': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'Blaster_Brawler': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'Laser_Printer': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'Vanguard_Jhin': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        '4Vanguard_Jhin': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'Cybernetics': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'Chrono_Kayle': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'High_Value': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'Celestial_Darius': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'Mech_infiltrator': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'Rebel_Demolitionist': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'StarGuardian_Sorcerer': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'DarkStar_Sniper': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0},
-        'Health_Deck': {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0}
-    }
+    output = {}
+    for meta in TFTConstants.Deck.Meta_name:
+        output[meta] = {"win": 0, "top4": 0, "rank_sum": 0, "game_cnt": 0, "completed_cnt": 0, "completed_win": 0, "completed_top4": 0, "completed_rank_sum": 0}
+    return output
+
+
+def make_galaxy_dict():
+    output = {}
+    for galaxy in TFTConstants.galaxy_list:
+        output[galaxy["key"]] = make_meta_dict()
+    return output
+
+
+def make_champion_list_for_item():
+    output = {}
+    for champ in TFTConstants.champion_list:
+        output[champ["championId"]] = {}
+    return output
 
 
 class MatchInfo:
     # each champion's best item
-    Which_item_favored = {
-        "TFT3_Ahri": {},
-        "TFT3_Annie": {},
-        "TFT3_Ashe": {},
-        "TFT3_AurelionSol": {},
-        "TFT3_Blitzcrank": {},
-        "TFT3_Caitlyn": {},
-        "TFT3_ChoGath": {},
-        "TFT3_Darius": {},
-        "TFT3_Ekko": {},
-        "TFT3_Ezreal": {},
-        "TFT3_Fiora": {},
-        "TFT3_Fizz": {},
-        "TFT3_Gangplank": {},
-        "TFT3_Graves": {},
-        "TFT3_Irelia": {},
-        "TFT3_JarvanIV": {},
-        "TFT3_Jayce": {},
-        "TFT3_Jhin": {},
-        "TFT3_Jinx": {},
-        "TFT3_KaiSa": {},
-        "TFT3_Karma": {},
-        "TFT3_Kassadin": {},
-        "TFT3_Kayle": {},
-        "TFT3_KhaZix": {},
-        "TFT3_Leona": {},
-        "TFT3_Lucian": {},
-        "TFT3_Lulu": {},
-        "TFT3_Lux": {},
-        "TFT3_Malphite": {},
-        "TFT3_MasterYi": {},
-        "TFT3_MissFortune": {},
-        "TFT3_Mordekaiser": {},
-        "TFT3_Neeko": {},
-        "TFT3_Poppy": {},
-        "TFT3_Rakan": {},
-        "TFT3_Rumble": {},
-        "TFT3_Shaco": {},
-        "TFT3_Shen": {},
-        "TFT3_Sona": {},
-        "TFT3_Soraka": {},
-        "TFT3_Syndra": {},
-        "TFT3_Thresh": {},
-        "TFT3_TwistedFate": {},
-        "TFT3_VelKoz": {},
-        "TFT3_Vi": {},
-        "TFT3_WuKong": {},
-        "TFT3_Xayah": {},
-        "TFT3_Xerath": {},
-        "TFT3_XinZhao": {},
-        "TFT3_Yasuo": {},
-        "TFT3_Ziggs": {},
-        "TFT3_Zoe": {}
-    }
+    Which_item_favored = make_champion_list_for_item()
     # each galaxy's deck statistics
-    Galaxy_statistics = {
-        "TFT3_GameVariation_BigLittleLegends": make_meta_dict(),
-        "TFT3_GameVariation_Bonanza": make_meta_dict(),
-        "TFT3_GameVariation_FourCostFirstCarousel": make_meta_dict(),
-        "TFT3_GameVariation_FreeNeekos": make_meta_dict(),
-        "TFT3_GameVariation_FreeRerolls": make_meta_dict(),
-        "TFT3_GameVariation_MidGameFoN": make_meta_dict(),
-        "TFT3_GameVariation_None": make_meta_dict(),
-        "TFT3_GameVariation_StartingItems": make_meta_dict(),
-        "TFT3_GameVariation_TwoStarCarousels": make_meta_dict()
-    }
-
-    def clear_up_which_item_favored(self):
-        self.Which_item_favored = {
-            "TFT3_Ahri": {},
-            "TFT3_Annie": {},
-            "TFT3_Ashe": {},
-            "TFT3_AurelionSol": {},
-            "TFT3_Blitzcrank": {},
-            "TFT3_Caitlyn": {},
-            "TFT3_ChoGath": {},
-            "TFT3_Darius": {},
-            "TFT3_Ekko": {},
-            "TFT3_Ezreal": {},
-            "TFT3_Fiora": {},
-            "TFT3_Fizz": {},
-            "TFT3_Gangplank": {},
-            "TFT3_Graves": {},
-            "TFT3_Irelia": {},
-            "TFT3_JarvanIV": {},
-            "TFT3_Jayce": {},
-            "TFT3_Jhin": {},
-            "TFT3_Jinx": {},
-            "TFT3_KaiSa": {},
-            "TFT3_Karma": {},
-            "TFT3_Kassadin": {},
-            "TFT3_Kayle": {},
-            "TFT3_KhaZix": {},
-            "TFT3_Leona": {},
-            "TFT3_Lucian": {},
-            "TFT3_Lulu": {},
-            "TFT3_Lux": {},
-            "TFT3_Malphite": {},
-            "TFT3_MasterYi": {},
-            "TFT3_MissFortune": {},
-            "TFT3_Mordekaiser": {},
-            "TFT3_Neeko": {},
-            "TFT3_Poppy": {},
-            "TFT3_Rakan": {},
-            "TFT3_Rumble": {},
-            "TFT3_Shaco": {},
-            "TFT3_Shen": {},
-            "TFT3_Sona": {},
-            "TFT3_Soraka": {},
-            "TFT3_Syndra": {},
-            "TFT3_Thresh": {},
-            "TFT3_TwistedFate": {},
-            "TFT3_VelKoz": {},
-            "TFT3_Vi": {},
-            "TFT3_WuKong": {},
-            "TFT3_Xayah": {},
-            "TFT3_Xerath": {},
-            "TFT3_XinZhao": {},
-            "TFT3_Yasuo": {},
-            "TFT3_Ziggs": {},
-            "TFT3_Zoe": {}
-        }
-
-    def clear_up_galaxy_statistics(self):
-        self.Galaxy_statistics = {
-            "TFT3_GameVariation_BigLittleLegends": make_meta_dict(),
-            "TFT3_GameVariation_Bonanza": make_meta_dict(),
-            "TFT3_GameVariation_FourCostFirstCarousel": make_meta_dict(),
-            "TFT3_GameVariation_FreeNeekos": make_meta_dict(),
-            "TFT3_GameVariation_FreeRerolls": make_meta_dict(),
-            "TFT3_GameVariation_MidGameFoN": make_meta_dict(),
-            "TFT3_GameVariation_None": make_meta_dict(),
-            "TFT3_GameVariation_StartingItems": make_meta_dict(),
-            "TFT3_GameVariation_TwoStarCarousels": make_meta_dict()
-        }
+    Galaxy_statistics = make_galaxy_dict()
 
     def __init__(self, info):
         self.version = info["game_version"]
@@ -387,13 +252,14 @@ def get_part_match_info(start, end):
     while file_idx <= end:
         if match_id_data == "":
             break
+
         match_id = match_id_data[:-1]
         info = loop.run_until_complete(getTFTmatchInfo(match_id))["info"]
-
         match_id_data = match_ids_file.readline()
         file_idx += 1
         if info["game_version"][:13] != version[:13]:
             continue
+
         game_counted += 1
         match_info = MatchInfo(info)
         for participant in match_info.participants:
@@ -448,8 +314,10 @@ def get_match_info(n=9):
     for i in range(n):
         print("part" + str(i))
         get_part_match_info(i * 1000 + 1, i * 1000 + 1000)
-    print(match_info.Which_item_favored)
-    print(match_info.Galaxy_statistics)
+        print(match_info.Which_item_favored)
+        print(match_info.Galaxy_statistics)
+    #print(match_info.Which_item_favored)
+    #print(match_info.Galaxy_statistics)
 
 
 
