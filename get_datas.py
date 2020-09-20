@@ -4,12 +4,12 @@ import TFTConstants
 
 ###############################
 server = "kr"
-apikey = "YOUR_API"
+apikey = "RGAPI-90b23334-2b95-4f70-8d19-699fa10518b8"
 sleep_time = 1.21
 DEBUG = False
 PRINT_LOG = False
-version = 'Version 10.12.323.8771 (Jun 04 2020/15:31:11) [PUBLIC] <Releases/10.12>'
-
+version = '<Releases/10.18>'
+min_match_id = 4619651258
 ###############################
 
 
@@ -176,7 +176,9 @@ def make_match_ids_txt():
         puuid = puuid_data[:-1]
         match_id_list = loop.run_until_complete(getTFTmatchIds(puuid))
         for match_id in match_id_list:
-            match_id_set.add(match_id)
+            tmp_match_id_int = int(match_id[3:])
+            if tmp_match_id_int > min_match_id:
+                match_id_set.add(match_id)
         puuid_data = puuid_file.readline()
     puuid_file.close()
 
@@ -199,13 +201,6 @@ def make_meta_dict():
     return output
 
 
-def make_galaxy_dict():
-    output = {}
-    for galaxy in TFTConstants.galaxy_list:
-        output[galaxy["key"]] = make_meta_dict()
-    return output
-
-
 def make_champion_list_for_item():
     output = {}
     for champ in TFTConstants.champion_list:
@@ -216,8 +211,7 @@ def make_champion_list_for_item():
 class MatchInfo:
     # each champion's best item
     Which_item_favored = make_champion_list_for_item()
-    # each galaxy's deck statistics
-    Galaxy_statistics = make_galaxy_dict()
+    Statistics = make_meta_dict()
 
     def __init__(self, info):
         self.version = info["game_version"]
@@ -225,7 +219,7 @@ class MatchInfo:
         self.variation = info["game_variation"]
 
 
-def get_part_match_info(start, end):
+def get_part_match_info(start, end, min_match_id: int):
     game_counted = 0
     try:
         if DEBUG:
@@ -254,10 +248,31 @@ def get_part_match_info(start, end):
             break
 
         match_id = match_id_data[:-1]
-        info = loop.run_until_complete(getTFTmatchInfo(match_id))["info"]
+        match_id_int = eval(match_id[3:])
+
+        if min_match_id > match_id_int:
+            match_id_data = match_ids_file.readline()
+            file_idx += 1
+            continue
+
         match_id_data = match_ids_file.readline()
         file_idx += 1
-        if info["game_version"][:13] != version[:13]:
+        # catch exceptions
+        info = None
+        try:
+            info = loop.run_until_complete(getTFTmatchInfo(match_id))["info"]
+        except Exception as e:
+            print(e)
+            continue
+
+        # version checking
+        if info["game_version"][-len(version):] != version:
+            min_match_id = match_id_int
+            print("LOG: min_match_id update", min_match_id)
+            print(info["game_version"])
+            continue
+        # remove noise
+        if info["game_length"] == 0:
             continue
 
         game_counted += 1
@@ -269,22 +284,22 @@ def get_part_match_info(start, end):
                 continue
             meta, similarity = deck.define_meta()
 
-            # updating MatchInfo.Galaxy_statistics
+            # updating MatchInfo.Statistics
             if meta != "etc":
-                MatchInfo.Galaxy_statistics[match_info.variation][meta]["game_cnt"] += 1
+                MatchInfo.Statistics[meta]["game_cnt"] += 1
                 rank = participant["placement"]
-                MatchInfo.Galaxy_statistics[match_info.variation][meta]["rank_sum"] += rank
+                MatchInfo.Statistics[meta]["rank_sum"] += rank
                 if rank == 1:
-                    MatchInfo.Galaxy_statistics[match_info.variation][meta]["win"] += 1
+                    MatchInfo.Statistics[meta]["win"] += 1
                 if rank <= 4:
-                    MatchInfo.Galaxy_statistics[match_info.variation][meta]["top4"] += 1
+                    MatchInfo.Statistics[meta]["top4"] += 1
                 if deck.is_accomplished:
-                    MatchInfo.Galaxy_statistics[match_info.variation][meta]["completed_cnt"] += 1
-                    MatchInfo.Galaxy_statistics[match_info.variation][meta]["completed_rank_sum"] += rank
+                    MatchInfo.Statistics[meta]["completed_cnt"] += 1
+                    MatchInfo.Statistics[meta]["completed_rank_sum"] += rank
                     if rank == 1:
-                        MatchInfo.Galaxy_statistics[match_info.variation][meta]["completed_win"] += 1
+                        MatchInfo.Statistics[meta]["completed_win"] += 1
                     if rank <= 4:
-                        MatchInfo.Galaxy_statistics[match_info.variation][meta]["completed_top4"] += 1
+                        MatchInfo.Statistics[meta]["completed_top4"] += 1
 
             # updating MatchInfo.Which_item_favored
             for unit in units:
@@ -306,18 +321,21 @@ def get_part_match_info(start, end):
 
     match_ids_file.close()
     # print(MatchInfo.Which_item_favored)
-    # print(MatchInfo.Galaxy_statistics)
+    # print(MatchInfo.Statistics)
 
 
-def get_match_info(n=9):
+def get_match_info(n=9, steps=1000, saved_instance=[], saved_n=0, min_match_id=0):
     match_info = MatchInfo({"game_version": '', "participants": '', "game_variation": ''})
-    for i in range(n):
+    if len(saved_instance) != 0:
+        MatchInfo.Which_item_favored = saved_instance[0]
+        MatchInfo.Statistics = saved_instance[1]
+        print("continuing...")
+
+    if n < saved_n:
+        print("please check value of n")
+        return
+    for i in range(saved_n, n):
         print("part" + str(i))
-        get_part_match_info(i * 1000 + 1, i * 1000 + 1000)
-        print(match_info.Which_item_favored)
-        print(match_info.Galaxy_statistics)
-    #print(match_info.Which_item_favored)
-    #print(match_info.Galaxy_statistics)
-
-
-
+        get_part_match_info(i*steps + 1, i*steps + steps, min_match_id)
+        print(MatchInfo.Which_item_favored)
+        print(MatchInfo.Statistics)

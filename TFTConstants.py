@@ -1,149 +1,203 @@
 ######## constants ########
 ###########################
 trait_list = [
-    {'key': 'Set3_Blademaster', 'name': 'Blademaster', 'type': 'class',
+    {'key': 'Cultist', 'name': 'Cultist', 'type': 'origin',
+     'sets': [{'style': 'bronze', 'min': 3, 'max': 5}, {'style': 'silver', 'min': 6, 'max': 8},
+              {'style': 'gold', 'min': 9}]},
+
+    {'key': 'Divine', 'name': 'Divine', 'type': 'origin',
+     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'silver', 'min': 4, 'max': 5},
+              {'style': 'gold', 'min': 6, 'max': 7}, {'style': 'chromatic', 'min': 8}]},
+
+    {'key': 'Dusk', 'name': 'Dusk', 'type': 'origin',
+     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'gold', 'min': 4, 'max': 5},
+              {'style': 'chromatic', 'min': 6}]},
+
+    {'key': 'Set4_Elderwood', 'name': 'Elderwood', 'type': 'origin',
      'sets': [{'style': 'bronze', 'min': 3, 'max': 5}, {'style': 'gold', 'min': 6, 'max': 8},
               {'style': 'chromatic', 'min': 9}]},
 
-    {'key': 'Blaster', 'name': 'Blaster', 'type': 'class',
-     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'gold', 'min': 4}]},
-
-    {'key': 'Set3_Brawler', 'name': 'Brawler', 'type': 'class',
-     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'min': 4}]},
-
-    {'key': 'Set3_Celestial', 'name': 'Celestial', 'type': 'origin',
-     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'gold', 'min': 4, 'max': 5},
-              {'style': 'chromatic', 'min': 6}]},
-
-    {'key': 'Chrono', 'name': 'Chrono', 'type': 'origin',
+    {'key': 'Set4_Enlightened', 'name': 'Enlightened', 'type': 'origin',
      'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'silver', 'min': 4, 'max': 5},
-              {'style': 'gold', 'min': 6, 'max': 7}, {'style': 'chromatic', 'min': 8}]},
+              {'style': 'gold', 'min': 6}]},
 
-    {'key': 'Cybernetic', 'name': 'Cybernetic', 'type': 'origin',
-     'sets': [{'style': 'silver', 'min': 3, 'max': 5}, {'style': 'gold', 'min': 6}]},
+    {'key': 'Set4_Exile', 'name': 'Exile', 'type': 'origin',
+     'sets': [{'style': 'bronze', 'min': 1, 'max': 1}, {'style': 'gold', 'min': 2}]},
 
-    {'key': 'DarkStar', 'name': 'Dark Star', 'type': 'origin',
-     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'silver', 'min': 4, 'max': 5},
-              {'style': 'gold', 'min': 6, 'max': 7}, {'style': 'chromatic', 'min': 8}]},
+    {'key': 'Fortune', 'name': 'Fortune', 'type': 'origin',
+     'sets': [{'style': 'gold', 'min': 3, 'max': 5}, {'style': 'chromatic', 'min': 6}]},
 
-    {'key': 'Demolitionist', 'name': 'Demolitionist', 'type': 'class',
-     'sets': [{'style': 'gold', 'min': 2}]},
-
-    {'key': 'Infiltrator', 'name': 'Infiltrator', 'type': 'class',
-     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'gold', 'min': 4, 'max': 5},
-              {'style': 'chromatic', 'min': 6}]},
-
-    {'key': 'ManaReaver', 'name': 'Mana-Reaver', 'type': 'class',
-     'sets': [{'style': 'gold', 'min': 2}]},
-
-    {'key': 'MechPilot', 'name': 'Mech-Pilot', 'type': 'origin',
+    {'key': 'Moonlight', 'name': 'Moonlight', 'type': 'origin',
      'sets': [{'style': 'gold', 'min': 3}]},
 
-    {'key': 'Mercenary', 'name': 'Mercenary', 'type': 'class',
-     'sets': [{'style': 'gold', 'min': 1}]},
+    {'key': 'Set4_Ninja', 'name': 'Ninja', 'type': 'origin',
+     'sets': [{'style': 'bronze', 'min': 1, 'max': 1}, {'style': 'gold', 'min': 4, 'max': 4}]},
 
-    {'key': 'Set3_Mystic', 'name': 'Mystic', 'type': 'class',
+    {'key': 'Set4_Spirit', 'name': 'Spirit', 'type': 'origin',
      'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'gold', 'min': 4}]},
 
-    {'key': 'Protector', 'name': 'Protector', 'type': 'class',
-     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'gold', 'min': 4, 'max': 5},
-              {'style': 'chromatic', 'min': 6}]},
+    {'key': 'Boss', 'name': 'The Boss', 'type': 'origin',
+     'sets': [{'style': 'gold', 'min': 1}]},
 
-    {'key': 'Rebel', 'name': 'Rebel', 'type': 'origin',
+    {'key': 'Set4_Tormented', 'name': 'Tormented', 'type': 'origin',
+     'sets': [{'style': 'gold', 'min': 1}]},
+
+    {'key': 'Warlord', 'name': 'Warlord', 'type': 'origin',
      'sets': [{'style': 'bronze', 'min': 3, 'max': 5}, {'style': 'gold', 'min': 6, 'max': 8},
               {'style': 'chromatic', 'min': 9}]},
 
-    {'key': 'Sniper', 'name': 'Sniper', 'type': 'class',
-     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'gold', 'min': 4}]},
+    {'key': 'Set4_Adept', 'name': 'Adept', 'type': 'class',
+     'sets': [{'style': 'bronze', 'min': 2, 'max': 2}, {'style': 'gold', 'min': 3, 'max': 3},
+              {'style': 'chromatic', 'min': 4}]},
 
-    {'key': 'Set3_Sorcerer', 'name': 'Sorcerer', 'type': 'class',
-     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'silver', 'min': 4, 'max': 5},
-              {'style': 'gold', 'min': 6}]},
+    {'key': 'Set4_Assassin', 'name': 'Assassin', 'type': 'class',
+     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'gold', 'min': 4, 'max': 5},
+              {'style': 'chromatic', 'min': 6}]},
 
-    {'key': 'SpacePirate', 'name': 'Space Pirate', 'type': 'origin',
-     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'gold', 'min': 4}]},
-
-    {'key': 'StarGuardian', 'name': 'Star Guardian', 'type': 'origin',
-     'sets': [{'style': 'bronze', 'min': 3, 'max': 5}, {'style': 'gold', 'min': 6}, {'style': 'chromatic', 'min': 9}]},
-
-    {'key': 'Starship', 'name': 'Starship', 'type': 'class',
-     'sets': [{'style': 'gold', 'min': 1}]},
-
-    {'key': 'Battlecast', 'name': 'Battlecast', 'type': 'origin',
+    {'key': 'Set4_Brawler', 'name': 'Brawler', 'type': 'class',
      'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'silver', 'min': 4, 'max': 5},
               {'style': 'gold', 'min': 6, 'max': 7}, {'style': 'chromatic', 'min': 8}]},
 
-    {'key': 'Vanguard', 'name': 'Vanguard', 'type': 'class',
-     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'silver', 'min': 4, 'max': 5},
-              {'style': 'gold', 'min': 6}]},
+    {'key': 'Set4_Dazzler', 'name': 'Dazzler', 'type': 'class',
+     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'gold', 'min': 4}]},
 
-    {'key': 'Paragon', 'name': 'Paragon', 'type': 'class',
-     'sets': [{'style': 'gold', 'min': 1}]}
+    {'key': 'Duelist', 'name': 'Duelist', 'type': 'class',
+     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'silver', 'min': 4, 'max': 5},
+              {'style': 'gold', 'min': 6, 'max': 7}, {'style': 'chromatic', 'min': 8}]},
+
+    {'key': 'Emperor', 'name': 'Emperor', 'type': 'class',
+     'sets': [{'style': 'gold', 'min': 1, 'max': 1}]},
+
+    {'key': 'Hunter', 'name': 'Hunter', 'type': 'class',
+     'sets': [{'style': 'bronze', 'min': 2, 'max': 2}, {'style': 'silver', 'min': 3, 'max': 3},
+              {'style': 'gold', 'min': 4, 'max': 4}, {'style': 'chromatic', 'min': 5}]},
+
+    {'key': 'Keeper', 'name': 'Keeper', 'type': 'class',
+     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'gold', 'min': 4, 'max': 5},
+              {'style': 'chromatic', 'min': 6}]},
+
+    {'key': 'Set4_Mage', 'name': 'Mage', 'type': 'class',
+     'sets': [{'style': 'bronze', 'min': 3, 'max': 5}, {'style': 'gold', 'min': 6, 'max': 8},
+              {'style': 'chromatic', 'min': 9}]},
+
+    {'key': 'Set4_Mystic', 'name': 'Mystic', 'type': 'class',
+     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'gold', 'min': 4, 'max': 5},
+              {'style': 'chromatic', 'min': 6}]},
+
+    {'key': 'Set4_Shade', 'name': 'Shade', 'type': 'class',
+     'sets': [{'style': 'bronze', 'min': 2, 'max': 2}, {'style': 'gold', 'min': 3, 'max': 3},
+              {'style': 'chromatic', 'min': 4}]},
+
+    {'key': 'Sharpshooter', 'name': 'Sharpshooter', 'type': 'class',
+     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'gold', 'min': 4, 'max': 5},
+              {'style': 'chromatic', 'min': 6}]},
+
+    {'key': 'Set4_Vanguard', 'name': 'Vanguard', 'type': 'class',
+     'sets': [{'style': 'bronze', 'min': 2, 'max': 3}, {'style': 'silver', 'min': 4, 'max': 5},
+              {'style': 'gold', 'min': 6}]}
 ]
+# for my convenience
+Cultist = 'Cultist';                    Divine = 'Divine'
+Dusk = 'Dusk';                          Set4_Elderwood = 'Set4_Elderwood'
+Set4_Enlightened = 'Set4_Enlightened';  Set4_Exile = 'Set4_Exile'
+Fortune = 'Fortune';                    Moonlight = 'Moonlight'
+Set4_Ninja = 'Set4_Ninja';              Set4_Spirit = 'Set4_Spirit'
+Boss = 'Boss';                          Set4_Tormented = 'Set4_Tormented'
+Warlord = 'Warlord';                    Set4_Adept = 'Set4_Adept'
+Set4_Assassin = 'Set4_Assassin';        Set4_Brawler = 'Set4_Brawler'
+Set4_Dazzler = 'Set4_Dazzler';          Duelist = 'Duelist'
+Emperor = 'Emperor';                    Hunter = 'Hunter'
+Keeper = 'Keeper';                      Set4_Mage = 'Set4_Mage'
+Set4_Mystic = 'Set4_Mystic';            Set4_Shade = 'Set4_Shade'
+Sharpshooter = 'Sharpshooter';          Set4_Vanguard = 'Set4_Vanguard'
+
+
 get_trait_key_by_name = {}
 for t in trait_list:
     get_trait_key_by_name[t["name"]] = t["key"]
 
 champion_list = [
-    {'name': 'Ahri', 'championId': 'TFT3_Ahri', 'cost': 2, 'traits': ['Star Guardian', 'Sorcerer']},
-    {'name': 'Annie', 'championId': 'TFT3_Annie', 'cost': 2, 'traits': ['Mech-Pilot', 'Sorcerer']},
-    {'name': 'Ashe', 'championId': 'TFT3_Ashe', 'cost': 3, 'traits': ['Celestial', 'Sniper']},
-    {'name': 'Aurelion Sol', 'championId': 'TFT3_AurelionSol', 'cost': 5, 'traits': ['Rebel', 'Starship']},
-    {'name': 'Bard', 'championId': 'TFT3_Bard', 'cost': 3, 'traits': ['Astro', 'Mystic']},
-    {'name': 'Blitzcrank', 'championId': 'TFT3_Blitzcrank', 'cost': 2, 'traits': ['Chrono', 'Brawler']},
-    {'name': 'Caitlyn', 'championId': 'TFT3_Caitlyn', 'cost': 1, 'traits': ['Chrono', 'Sniper']},
-    {'name': "Cassiopeia", 'championId': 'TFT3_Cassiopeia', 'cost': 3, 'traits': ['Battlecast', 'Mystic']},
-    {'name': 'Darius', 'championId': 'TFT3_Darius', 'cost': 2, 'traits': ['Space Pirate', 'Mana-Reaver']},
-    {'name': 'Ekko', 'championId': 'TFT3_Ekko', 'cost': 5, 'traits': ['Cybernetic', 'Infiltrato']},
-    {'name': 'Ezreal', 'championId': 'TFT3_Ezreal', 'cost': 3, 'traits': ['Chrono', 'Blaster']},
-    {'name': 'Fiora', 'championId': 'TFT3_Fiora', 'cost': 1, 'traits': ['Cybernetic', 'Blademaster']},
-    {'name': 'Fizz', 'championId': 'TFT3_Fizz', 'cost': 4, 'traits': ['Mech-Pilot', 'Infiltrator']},
-    {'name': 'Gangplank', 'championId': 'TFT3_Gangplank', 'cost': 5,
-     'traits': ['Space Pirate', 'Mercenary', 'Demolitionist']},
-    {'name': 'Gnar', 'championId': 'TFT3_Gnar', 'cost': 4, 'traits': ['Astro', 'Brawler']},
-    {'name': 'Graves', 'championId': 'TFT3_Graves', 'cost': 1, 'traits': ['Space Pirate', 'Blaster']},
-    {'name': 'Illaoi', 'championId': 'TFT3_Illaoi', 'cost': 1, 'traits': ['Battlecast', 'Brawler']},
-    {'name': 'Irelia', 'championId': 'TFT3_Irelia', 'cost': 4, 'traits': ['Cybernetic', 'Mana-Reaver', 'Blademaster']},
-    {'name': 'Janna', 'championId': 'TFT3_Janna', 'cost': 5, 'traits': ['Paragon', 'Star Guardian']},
-    {'name': 'Jarvan IV', 'championId': 'TFT3_JarvanIV', 'cost': 1, 'traits': ['Dark Star', 'Protector']},
-    {'name': 'Jayce', 'championId': 'TFT3_Jayce', 'cost': 3, 'traits': ['Space Pirate', 'Vanguard']},
-    {'name': 'Jhin', 'championId': 'TFT3_Jhin', 'cost': 4, 'traits': ['Dark Star', 'Sniper']},
-    {'name': 'Jinx', 'championId': 'TFT3_Jinx', 'cost': 4, 'traits': ['Rebel', 'Blaster']},
-    {'name': 'Karma', 'championId': 'TFT3_Karma', 'cost': 3, 'traits': ['Dark Star', 'Mystic']},
-    {'name': 'KogMaw', 'championId': 'TFT3_KogMaw', 'cost': 2, 'traits': ['Battlecast', 'Blaster']},
-    {'name': 'Leona', 'championId': 'TFT3_Leona', 'cost': 1, 'traits': ['Cybernetic', 'Vanguard']},
-    {'name': 'Lucian', 'championId': 'TFT3_Lucian', 'cost': 2, 'traits': ['Cybernetic', 'Blaster']},
-    {'name': 'Lulu', 'championId': 'TFT3_Lulu', 'cost': 5, 'traits': ['Celestial', 'Mystic']},
-    {'name': 'Malphite', 'championId': 'TFT3_Malphite', 'cost': 1, 'traits': ['Rebel', 'Brawler']},
-    {'name': 'Master Yi', 'championId': 'TFT3_MasterYi', 'cost': 3, 'traits': ['Rebel', 'Blademaster']},
-    {'name': 'Mordekaiser', 'championId': 'TFT3_Mordekaiser', 'cost': 2, 'traits': ['Dark Star', 'Vanguard']},
-    {'name': 'Nautilus', 'championId': 'TFT3_Nautilus', 'cost': 2, 'traits': ['Astro', 'Vanguard']},
-    {'name': 'Neeko', 'championId': 'TFT3_Neeko', 'cost': 3, 'traits': ['Star Guardian', 'Protector']},
-    {'name': 'Nocturne', 'championId': 'TFT3_Nocturne', 'cost': 1, 'traits': ['Battlecast', 'Infiltrator']},
-    {'name': 'Poppy', 'championId': 'TFT3_Poppy', 'cost': 1, 'traits': ['Star Guardian', 'Vanguard']},
-    {'name': 'Rakan', 'championId': 'TFT3_Rakan', 'cost': 2, 'traits': ['Celestial', 'Protector']},
-    {'name': 'Riven', 'championId': 'TFT3_Riven', 'cost': 4, 'traits': ['Chrono', 'Blademaster']},
-    {'name': 'Rumble', 'championId': 'TFT3_Rumble', 'cost': 3, 'traits': ['Mech-Pilot', 'Demolitionist']},
-    {'name': 'Shaco', 'championId': 'TFT3_Shaco', 'cost': 3, 'traits': ['Dark Star', 'Infiltrator']},
-    {'name': 'Shen', 'championId': 'TFT3_Shen', 'cost': 2, 'traits': ['Chrono', 'Blademaster']},
-    {'name': 'Soraka', 'championId': 'TFT3_Soraka', 'cost': 4, 'traits': ['Star Guardian', 'Mystic']},
-    {'name': 'Syndra', 'championId': 'TFT3_Syndra', 'cost': 3, 'traits': ['Star Guardian', 'Sorcerer']},
-    {'name': 'Teemo', 'championId': 'TFT3_Teemo', 'cost': 4, 'traits': ['Astro', 'Sniper']},
-    {'name': 'Thresh', 'championId': 'TFT3_Thresh', 'cost': 5, 'traits': ['Chrono', 'Mana-Reaver']},
-    {'name': 'Twisted Fate', 'championId': 'TFT3_TwistedFate', 'cost': 1, 'traits': ['Chrono', 'Sorcerer']},
-    {'name': 'Urgot', 'championId': 'TFT3_Urgot', 'cost': 5, 'traits': ['Battlecast', 'Protector']},
-    {'name': 'Vayne', 'championId': 'TFT3_Vayne', 'cost': 3, 'traits': ['Cybernetic', 'Sniper']},
-    {'name': 'Vi', 'championId': 'TFT3_Vi', 'cost': 3, 'traits': ['Cybernetic', 'Brawler']},
-    {'name': 'Viktor', 'championId': 'TFT3_Viktor', 'cost': 4, 'traits': ['Battlecast', 'Sorcerer']},
-    {'name': 'Wukong', 'championId': 'TFT3_WuKong', 'cost': 4, 'traits': ['Chrono', 'Vanguard']},
-    {'name': 'Xayah', 'championId': 'TFT3_Xayah', 'cost': 1, 'traits': ['Celestial', 'Blademaster']},
-    {'name': 'Xerath', 'championId': 'TFT3_Xerath', 'cost': 5, 'traits': ['Dark Star', 'Sorcerer']},
-    {'name': 'Xin Zhao', 'championId': 'TFT3_XinZhao', 'cost': 2, 'traits': ['Celestial', 'Protector']},
-    {'name': 'Yasuo', 'championId': 'TFT3_Yasuo', 'cost': 2, 'traits': ['Rebel', 'Blademaster']},
-    {'name': 'Zed', 'championId': 'TFT3_Zed', 'cost': 2, 'traits': ['Rebel', 'Infiltrator']},
-    {'name': 'Ziggs', 'championId': 'TFT3_Ziggs', 'cost': 1, 'traits': ['Rebel', 'Demolitionist']},
-    {'name': 'Zoe', 'championId': 'TFT3_Zoe', 'cost': 1, 'traits': ['Star Guardian', 'Sorcerer']}
+    {'name': 'Aatrox', 'championId': 'TFT4_Aatrox', 'cost': 4, 'traits': ['Cultist', 'Set4_Vanguard']},
+    {'name': 'Ahri', 'championId': 'TFT4_Ahri', 'cost': 4, 'traits': ['Set4_Spirit', 'Set4_Mage']},
+    {'name': 'Akali', 'championId': 'TFT4_Akali', 'cost': 3, 'traits': ['Set4_Ninja', 'Set4_Assassin']},
+    {'name': 'Annie', 'championId': 'TFT4_Annie', 'cost': 2, 'traits': ['Fortune', 'Set4_Mage']},
+    {'name': 'Aphelios', 'championId': 'TFT4_Aphelios', 'cost': 2, 'traits': ['Moonlight', 'Hunter']},
+    {'name': 'Ashe', 'championId': 'TFT4_Ashe', 'cost': 4, 'traits': ['Set4_Elderwood', 'Hunter']},
+    {'name': 'Azir', 'championId': 'TFT4_Azir', 'cost': 5, 'traits': ['Warlord', 'Keeper', 'Emperor']},
+    {'name': "Cassiopeia", 'championId': 'TFT4_Cassiopeia', 'cost': 4, 'traits': ['Dusk', 'Set4_Mystic']},
+    {'name': 'Diana', 'championId': 'TFT4_Diana', 'cost': 1, 'traits': ['Moonlight', 'Set4_Assassin']},
+    {'name': 'Elise', 'championId': 'TFT4_Elise', 'cost': 1, 'traits': ['Cultist', 'Keeper']},
+    {'name': 'Evelynn', 'championId': 'TFT4_Evelynn', 'cost': 3, 'traits': ['Cultist', 'Set4_Shade']},
+    {'name': 'Ezreal', 'championId': 'TFT4_Ezreal', 'cost': 5, 'traits': ['Set4_Elderwood', 'Set4_Dazzler']},
+    {'name': 'Fiora', 'championId': 'TFT4_Fiora', 'cost': 1, 'traits': ['Set4_Enlightened', 'Duelist']},
+    {'name': 'Garen', 'championId': 'TFT4_Garen', 'cost': 1, 'traits': ['Warlord', 'Set4_Vanguard']},
+    {'name': 'Hecarim', 'championId': 'TFT4_Hecarim', 'cost': 2, 'traits': ['Set4_Elderwood', 'Set4_Vanguard']},
+    {'name': 'Irelia', 'championId': 'TFT4_Irelia', 'cost': 3, 'traits': ['Set4_Enlightened', 'Divine', 'Set4_Adept']},
+    {'name': 'Janna', 'championId': 'TFT4_Janna', 'cost': 2, 'traits': ['Set4_Enlightened', 'Set4_Mystic']},
+    {'name': 'Jarvin IV', 'championId': 'TFT4_JarvanIV', 'cost': 2, 'traits': ['Warlord', 'Keeper']},
+    {'name': 'Jax', 'championId': 'TFT4_Jax', 'cost': 2, 'traits': ['Divine', 'Duelist']},
+    {'name': 'Jhin', 'championId': 'TFT4_Jhin', 'cost': 4, 'traits': ['Cultist', 'Sharpshooter']},
+    {'name': 'Jinx', 'championId': 'TFT4_Jinx', 'cost': 3, 'traits': ['Fortune', 'Sharpshooter']},
+    {'name': 'Kalista', 'championId': 'TFT4_Kalista', 'cost': 3, 'traits': ['Cultist', 'Duelist']},
+    {'name': 'Katarina', 'championId': 'TFT4_Katarina', 'cost': 3, 'traits': ['Warlord', 'Fortune', 'Set4_Assassin']},
+    {'name': 'Kayn', 'championId': 'TFT4_Kayn', 'cost': 5, 'traits': ['Set4_Tormented', 'Set4_Shade']},
+    {'name': 'Kennen', 'championId': 'TFT4_Kennen', 'cost': 3, 'traits': ['Set4_Ninja', 'Keeper']},
+    {'name': 'Kindred', 'championId': 'TFT4_Kindred', 'cost': 3, 'traits': ['Set4_Spirit', 'Hunter']},
+    {'name': 'Lee Sin', 'championId': 'TFT4_LeeSin', 'cost': 5, 'traits': ['Divine', 'Duelist']},
+    {'name': 'Lillia', 'championId': 'TFT4_Lillia', 'cost': 5, 'traits': ['Dusk', 'Set4_Mage']},
+    {'name': 'Lissandra', 'championId': 'TFT4_Lissandra', 'cost': 1, 'traits': ['Moonlight', 'Set4_Dazzler']},
+    {'name': 'Lulu', 'championId': 'TFT4_Lulu', 'cost': 2, 'traits': ['Set4_Elderwood', 'Set4_Mage']},
+    {'name': 'Lux', 'championId': 'TFT4_Lux', 'cost': 3, 'traits': ['Divine', 'Set4_Dazzler']},
+    {'name': 'Maokai', 'championId': 'TFT4_Maokai', 'cost': 2, 'traits': ['Set4_Elderwood', 'Set4_Brawler']},
+    {'name': 'Morgana', 'championId': 'TFT4_Morgana', 'cost': 4, 'traits': ['Set4_Enlightened', 'Set4_Dazzler']},
+    {'name': 'Nami', 'championId': 'TFT4_Nami', 'cost': 1, 'traits': ['Set4_Enlightened', 'Set4_Mage']},
+    {'name': 'Nidalee', 'championId': 'TFT4_Nidalee', 'cost': 1, 'traits': ['Warlord', 'Sharpshooter']},
+    {'name': 'Nunu & Willump', 'championId': 'TFT4_Nunu', 'cost': 3, 'traits': ['Set4_Elderwood', 'Set4_Brawler']},
+    {'name': 'Pyke', 'championId': 'TFT4_Pyke', 'cost': 2, 'traits': ['Cultist', 'Set4_Assassin']},
+    {'name': 'Riven', 'championId': 'TFT4_Riven', 'cost': 4, 'traits': ['Dusk', 'Keeper']},
+    {'name': 'Sejuani', 'championId': 'TFT4_Sejuani', 'cost': 4, 'traits': ['Fortune', 'Set4_Vanguard']},
+    {'name': 'Sett', 'championId': 'TFT4_Sett', 'cost': 5, 'traits': ['Boss', 'Set4_Brawler']},
+    {'name': 'Shen', 'championId': 'TFT4_Shen', 'cost': 4, 'traits': ['Set4_Ninja', 'Set4_Adept', 'Set4_Mystic']},
+    {'name': 'Sylas', 'championId': 'TFT4_Sylas', 'cost': 2, 'traits': ['Moonlight', 'Set4_Brawler']},
+    {'name': 'Tahm Kench', 'championId': 'TFT4_TahmKench', 'cost': 1, 'traits': ['Fortune', 'Set4_Brawler']},
+    {'name': 'Talon', 'championId': 'TFT4_Talon', 'cost': 4, 'traits': ['Set4_Enlightened', 'Set4_Assassin']},
+    {'name': 'Teemo', 'championId': 'TFT4_Teemo', 'cost': 2, 'traits': ['Set4_Spirit', 'Sharpshooter']},
+    {'name': 'Thresh', 'championId': 'TFT4_Thresh', 'cost': 2, 'traits': ['Dusk', 'Set4_Vanguard']},
+    {'name': 'Twisted Fate', 'championId': 'TFT4_TwistedFate', 'cost': 1, 'traits': ['Cultist', 'Set4_Mage']},
+    {'name': 'Vayne', 'championId': 'TFT4_Vayne', 'cost': 1, 'traits': ['Dusk', 'Sharpshooter']},
+    {'name': 'Veigar', 'championId': 'TFT4_Veigar', 'cost': 3, 'traits': ['Set4_Elderwood', 'Set4_Mage']},
+    {'name': 'Vi', 'championId': 'TFT4_Vi', 'cost': 2, 'traits': ['Warlord', 'Set4_Brawler']},
+    {'name': 'Warwick', 'championId': 'TFT4_Warwick', 'cost': 4, 'traits': ['Divine', 'Hunter', 'Set4_Brawler']},
+    {'name': 'Wukong', 'championId': 'TFT4_Wukong', 'cost': 1, 'traits': ['Divine', 'Set4_Vanguard']},
+    {'name': 'Xin Zhao', 'championId': 'TFT4_XinZhao', 'cost': 3, 'traits': ['Warlord', 'Duelist']},
+    {'name': 'Yasuo', 'championId': 'TFT4_Yasuo', 'cost': 1, 'traits': ['Set4_Exile', 'Duelist']},
+    {'name': 'Yone', 'championId': 'TFT4_Yone', 'cost': 5, 'traits': ['Set4_Exile', 'Set4_Adept']},
+    {'name': 'Yuumi', 'championId': 'TFT4_Yuumi', 'cost': 3, 'traits': ['Set4_Spirit', 'Set4_Mystic']},
+    {'name': 'Zed', 'championId': 'TFT4_Zed', 'cost': 2, 'traits': ['Set4_Ninja', 'Set4_Shade']},
+    {'name': 'Zilean', 'championId': 'TFT4_Zilean', 'cost': 5, 'traits': ['Cultist', 'Set4_Mystic']}
 ]
+
+# for my convenience
+TFT4_Aatrox = 'TFT4_Aatrox';        TFT4_Ahri = 'TFT4_Ahri';                TFT4_Akali = 'TFT4_Akali'
+TFT4_Annie = 'TFT4_Annie';          TFT4_Aphelios = 'TFT4_Aphelios';        TFT4_Ashe = 'TFT4_Ashe'
+TFT4_Azir = 'TFT4_Azir';            TFT4_Cassiopeia = 'TFT4_Cassiopeia';    TFT4_Diana = 'TFT4_Diana'
+TFT4_Elise = 'TFT4_Elise';          TFT4_Evelynn = 'TFT4_Evelynn';          TFT4_Ezreal = 'TFT4_Ezreal'
+TFT4_Fiora = 'TFT4_Fiora';          TFT4_Garen = 'TFT4_Garen';              TFT4_Hecarim = 'TFT4_Hecarim'
+TFT4_Irelia = 'TFT4_Irelia';        TFT4_Janna = 'TFT4_Janna';              TFT4_JarvanIV = 'TFT4_JarvanIV'
+TFT4_Jax = 'TFT4_Jax';              TFT4_Jhin = 'TFT4_Jhin';                TFT4_Jinx = 'TFT4_Jinx'
+TFT4_Kalista = 'TFT4_Kalista';      TFT4_Katarina = 'TFT4_Katarina';        TFT4_Kayn = 'TFT4_Kayn'
+TFT4_Kennen = 'TFT4_Kennen';        TFT4_Kindred = 'TFT4_Kindred';          TFT4_LeeSin = 'TFT4_LeeSin'
+TFT4_Lillia = 'TFT4_Lillia';        TFT4_Lissandra = 'TFT4_Lissandra';      TFT4_Lulu = 'TFT4_Lulu'
+TFT4_Lux = 'TFT4_Lux';              TFT4_Maokai = 'TFT4_Maokai';            TFT4_Morgana = 'TFT4_Morgana'
+TFT4_Nami = 'TFT4_Nami';            TFT4_Nidalee = 'TFT4_Nidalee';          TFT4_Nunu = 'TFT4_Nunu'
+TFT4_Pyke = 'TFT4_Pyke';            TFT4_Riven = 'TFT4_Riven';              TFT4_Sejuani = 'TFT4_Sejuani'
+TFT4_Sett = 'TFT4_Sett';            TFT4_Shen = 'TFT4_Shen';                TFT4_Sylas = 'TFT4_Sylas'
+TFT4_TahmKench = 'TFT4_TahmKench';  TFT4_Talon = 'TFT4_Talon';              TFT4_Teemo = 'TFT4_Teemo'
+TFT4_Thresh = 'TFT4_Thresh';        TFT4_TwistedFate = 'TFT4_TwistedFate';  TFT4_Vayne = 'TFT4_Vayne'
+TFT4_Veigar = 'TFT4_Veigar';        TFT4_Vi = 'TFT4_Vi';                    TFT4_Warwick = 'TFT4_Warwick'
+TFT4_Wukong = 'TFT4_Wukong';        TFT4_XinZhao = 'TFT4_XinZhao';          TFT4_Yasuo = 'TFT4_Yasuo'
+TFT4_Yone = 'TFT4_Yone';            TFT4_Yuumi = 'TFT4_Yuumi';              TFT4_Zed = 'TFT4_Zed'
+TFT4_Zilean = 'TFT4_Zilean'
 
 item_list = [
     {'id': 1, 'name': 'B.F. Sword'},
@@ -162,7 +216,7 @@ item_list = [
     {'id': 15, 'name': 'Guardian Angel'},
     {'id': 16, 'name': 'Bloodthirster'},
     {'id': 17, 'name': "Zeke's Herald"},
-    {'id': 18, 'name': 'Blade of the Ruined King'},
+    {'id': 18, 'name': 'Sword of the Divine'},
     {'id': 19, 'name': 'Infinity Edge'},
     {'id': 22, 'name': 'Rapid Firecannon'},
     {'id': 23, 'name': "Guinsoo's Rageblade"},
@@ -170,92 +224,40 @@ item_list = [
     {'id': 25, 'name': "Titan's Resolve"},
     {'id': 26, 'name': "Runaan's Hurricane"},
     {'id': 27, 'name': "Zz'Rot Portal"},
-    {'id': 28, 'name': "Infiltrator's Talons"},
+    {'id': 28, 'name': "Duelist's Zeal"},
     {'id': 29, 'name': 'Last Whisper'},
     {'id': 33, 'name': "Rabadon's Deathcap"},
     {'id': 34, 'name': "Luden's Echo"},
     {'id': 35, 'name': 'Locket of the Iron Solari'},
     {'id': 36, 'name': 'Ionic Spark'},
     {'id': 37, 'name': 'Morellonomicon'},
-    {'id': 38, 'name': "Battlecast Armor"},
+    {'id': 38, 'name': "Aspect of Dusk"},
     {'id': 39, 'name': 'Jeweled Gauntlet'},
-    {'id': 44, 'name': "Seraph's Embrace"},
+    {'id': 44, 'name': "Blue Buff"},
     {'id': 45, 'name': 'Frozen Heart'},
     {'id': 46, 'name': 'Chalice of Power'},
     {'id': 47, 'name': 'Redemption'},
-    {'id': 48, 'name': "Star Guardian's Charm"},
+    {'id': 48, 'name': "Mage's Hat"},
     {'id': 49, 'name': 'Hand Of Justice'},
     {'id': 55, 'name': 'Bramble Vest'},
-    {'id': 56, 'name': 'Sword Breaker'},
-    {'id': 57, 'name': 'Red Buff'},
-    {'id': 58, 'name': 'Rebel Medal'},
+    {'id': 56, 'name': 'Gargoyle Stoneplate'},
+    {'id': 57, 'name': 'Sunfire Cape'},
+    {'id': 58, 'name': 'Vanguard\'s Cuirass'},
     {'id': 59, 'name': 'Shroud of Stillness'},
     {'id': 66, 'name': "Dragon's Claw"},
     {'id': 67, 'name': 'Zephyr'},
-    {'id': 68, 'name': 'Celestial Orb'},
+    {'id': 68, 'name': 'Elderwood Sprout'},
     {'id': 69, 'name': 'Quicksilver'},
     {'id': 77, 'name': "Warmog's Armor"},
-    {'id': 78, 'name': "Protector's Chestguard"},
+    {'id': 78, 'name': "Warlord's Banner"},
     {'id': 79, 'name': 'Trap Claw'},
     {'id': 88, 'name': 'Force of Nature'},
-    {'id': 89, 'name': "Dark Star's Heart"},
+    {'id': 89, 'name': "Youmuu's Ghostblade"},
     {'id': 99, 'name': "Thief's Gloves"}
 ]
 get_item_id_by_name = {}
 for i in item_list:
     get_item_id_by_name[i["name"]] = i["id"]
-
-galaxy_list = [
-    {
-        "key": "TFT3_GameVariation_BigLittleLegends",
-        "name": "Medium Legends",
-        "description": "Little Legends are bigger and have +25 starting health."
-    },
-    {
-        "key": "TFT3_GameVariation_Bonanza",
-        "name": "Treasure Trove",
-        "description": "All minions and monsters drop a loot orb."
-    },
-    {
-        "key": "TFT3_GameVariation_FreeNeekos",
-        "name": "The Neekoverse",
-        "description": "Everyone gets two free copies of Neeko’s Help."
-    },
-    {
-        "key": "TFT3_GameVariation_FreeRerolls",
-        "name": "Trade Sector",
-        "description": "All players receive one free reroll per round. Free rerolls cannot be saved up."
-    },
-    {
-        "key": "TFT3_GameVariation_MidGameFoN",
-        "name": "Superdense Galaxy",
-        "description": "Receive a free Force of Nature after the stage 3 carousel."
-    },
-    {
-        "key": "TFT3_GameVariation_None",
-        "name": "Normal Game",
-        "description": "No special rules."
-    },
-    {
-        "key": "TFT3_GameVariation_StartingItems",
-        "name": "Galactic Armory",
-        "description": "All players start with the same 2 completed items."
-    },
-    {
-        "key": "TFT3_GameVariation_TwoStarCarousels",
-        "name": "Star Cluster",
-        "description": "1, 2, and 3 cost units on carousels have two stars."
-    },
-    {
-        "key": "TFT3_GameVariation_LittlerLegends",
-        "name": "Littler Little Legends",
-        "description": "Everyone starts with 85 health instead of 100."
-    }
-]
-
-# should update
-
-
 
 
 ###########################
@@ -294,77 +296,59 @@ def _make_deck_vector(deck):
     return vector
 
 
-def _get_traits(champions, items=[]):
-    traits_by_name = {}
+def _get_traits(champions, items=[], chosen=""):
+    traits_by_key = {}
     # get traits from champions
     for champion_id in champions:
         champion = None
         for champ in champion_list:
             if champ["championId"] == champion_id:
                 champion = champ.copy()
+                break;
         for trait in trait_list:
             champion_traits = champion["traits"]
-            if trait["name"] in champion_traits:
-                if trait["name"] in traits_by_name:
-                    traits_by_name[trait["name"]] += 1
+            '''
+            try:
+                champion_traits = champion["traits"]
+            except Exception as e:
+                print(e)
+                print(champion_id)
+            '''
+            if trait["key"] in champion_traits:
+                if trait["key"] in traits_by_key:
+                    traits_by_key[trait["key"]] += 1
                 else:
-                    traits_by_name[trait["name"]] = 1
+                    traits_by_key[trait["key"]] = 1
 
     # get traits from items
     for i in range(len(items)):
+        t = ""
         if items[i] == 18:
-            t = "Blademaster"
-            if t in traits_by_name:
-                traits_by_name[t] += 1
-            else:
-                traits_by_name[t] = 1
+            t = "Divine"
         elif items[i] == 28:
-            t = "Infiltrator"
-            if t in traits_by_name:
-                traits_by_name[t] += 1
-            else:
-                traits_by_name[t] = 1
+            t = "Duelist"
         elif items[i] == 38:
-            t = "Battlecast"
-            if t in traits_by_name:
-                traits_by_name[t] += 1
-            else:
-                traits_by_name[t] = 1
+            t = "Dusk"
         elif items[i] == 48:
-            t = "Star Guardian"
-            if t in traits_by_name:
-                traits_by_name[t] += 1
-            else:
-                traits_by_name[t] = 1
+            t = "Set4_Mage"
         elif items[i] == 58:
-            t = "Rebel"
-            if t in traits_by_name:
-                traits_by_name[t] += 1
-            else:
-                traits_by_name[t] = 1
+            t = "Set4_Vanguard"
         elif items[i] == 68:
-            t = "Celestial"
-            if t in traits_by_name:
-                traits_by_name[t] += 1
-            else:
-                traits_by_name[t] = 1
+            t = "Set4_Elderwood"
         elif items[i] == 78:
-            t = "Protector"
-            if t in traits_by_name:
-                traits_by_name[t] += 1
-            else:
-                traits_by_name[t] = 1
+            t = "Warlord"
         elif items[i] == 98:
-            t = "Dark Star"
-            if t in traits_by_name:
-                traits_by_name[t] += 1
-            else:
-                traits_by_name[t] = 1
+            t = "Set4_Assassin"
+        traits_by_key[t] = traits_by_key.setdefault(t, 0) + 1
+
+    # chosen trait
+    if chosen != "":
+        traits_by_key[chosen] = traits_by_key.setdefault(chosen, 0) + 1
 
     output = []
     # return trait key, num_units, tier
-    for trait_n in traits_by_name:
-        cnt = traits_by_name[trait_n]
+    for trait_n in traits_by_key:
+        cnt = traits_by_key[trait_n]
         for trait in trait_list:
             if trait["name"] == trait_n:
                 tier = 0
@@ -379,483 +363,175 @@ def _get_traits(champions, items=[]):
 
 
 class Deck:
-
     ######## METAS ########
     Metas = {
-        # Astro_Sniper Family
-        "Astro_Sniper": {
-            "parent_deck": "self",
+        # 9Cultist
+        "9Cultist": {
             "deck_vector": _make_deck_vector(
-                ["TFT3_Mordekaiser", "TFT3_Nautilus", "TFT3_Jayce", "TFT3_Gnar", "TFT3_Jhin",
-                 "TFT3_Teemo", "TFT3_WuKong", "TFT3_Thresh"]),
-            "carry_champion": ["TFT3_Teemo"],
-            "traits": _get_traits(["TFT3_Caitlyn", "TFT3_Nautilus", "TFT3_Ashe", "TFT3_Gnar", "TFT3_Jhin", "TFT3_Teemo",
-                                   "TFT3_WuKong", "TFT3_Thresh"]),
-            "main_traits": [
-                {'name': "Sniper", 'tier_current': 1},
-                {'name': "Vanguard", 'tier_current': 2}
-            ]
-        },
-        "Astro_Sniper_sub_4sniper": {
-            "parent_deck": "Astro_Sniper",
-            "deck_vector": _make_deck_vector(["TFT3_Caitlyn", "TFT3_Nautilus", "TFT3_Ashe", "TFT3_Karma",
-                                              "TFT3_Gnar", "TFT3_Jhin", "TFT3_Teemo", "TFT3_WuKong", "TFT3_Lulu"]),
-            "carry_champion": ["TFT3_Teemo"],
-            "traits": _get_traits(["TFT3_Caitlyn", "TFT3_Nautilus", "TFT3_Ashe", "TFT3_Karma", "TFT3_Gnar", "TFT3_Jhin",
-                                   "TFT3_Teemo", "TFT3_WuKong", "TFT3_Lulu"]),
-            "main_traits": [
-                {'name': "Sniper", 'tier_current': 2},
-                {'name': "Astro", 'tier_current': 1}
-            ]
-        },
-        "Astro_Sniper_sub_4sniper_4vanguard": {
-            "parent_deck": "Astro_Sniper",
-            "deck_vector": _make_deck_vector(["TFT3_Caitlyn", "TFT3_Mordekaiser", "TFT3_Nautilus", "TFT3_Ashe",
-                                              "TFT3_Jayce", "TFT3_Gnar", "TFT3_Jhin", "TFT3_Teemo", "TFT3_WuKong"]),
-            "carry_champion": ["TFT3_Teemo"],
-            "traits": _get_traits(["TFT3_Caitlyn", "TFT3_Mordekaiser", "TFT3_Nautilus", "TFT3_Ashe", "TFT3_Jayce",
-                                   "TFT3_Gnar", "TFT3_Jhin", "TFT3_Teemo", "TFT3_WuKong"]),
-            "main_traits": [
-                {'name': "Sniper", 'tier_current': 2},
-                {'name': "Astro", 'tier_current': 1},
-                {'name': "Vanguard", 'tier_current': 2}
-            ]
-        },
-
-        # Cybernetic Family
-        "Cybernetics": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_Fiora", "TFT3_Leona", "TFT3_Vi", "TFT3_Vayne", "TFT3_Riven",
-                                              "TFT3_Irelia", "TFT3_Ekko", "TFT3_Thresh"]),
-            "carry_champion": ["TFT3_Vayne", "TFT3_Irelia"],
-            "traits": _get_traits(["TFT3_Fiora", "TFT3_Leona", "TFT3_Vi", "TFT3_Vayne", "TFT3_Riven",
-                                   "TFT3_Irelia", "TFT3_Ekko", "TFT3_Thresh"]),
-            "main_traits": [
-                {'name': "Cybernetic", 'tier_current': 2}
-            ]
-        },
-        "Cybernetics_sub_Lucian": {
-            "parent_deck": "Cybernetics",
-            "deck_vector": _make_deck_vector(["TFT3_Fiora", "TFT3_Lucian", "TFT3_Vi", "TFT3_Vayne", "TFT3_Riven",
-                                              "TFT3_Irelia", "TFT3_Ekko", "TFT3_Thresh"]),
-            "carry_champion": ["TFT3_Vayne", "TFT3_Irelia"],
-            "traits": _get_traits(["TFT3_Fiora", "TFT3_Lucian", "TFT3_Vi", "TFT3_Vayne", "TFT3_Riven",
-                                   "TFT3_Irelia", "TFT3_Ekko", "TFT3_Thresh"]),
-            "main_traits": [
-                {'name': "Cybernetic", 'tier_current': 2}
-            ]
-        },
-        "Cybernetics_sub_Irelia_main": {
-            "parent_deck": "Cybernetics",
-            "deck_vector": _make_deck_vector(["TFT3_Leona", "TFT3_Fiora", "TFT3_Vi", "TFT3_Vayne", "TFT3_Riven",
-                                              "TFT3_Fizz", "TFT3_Irelia", "TFT3_Ekko", "TFT3_Thresh"]),
-            "carry_champion": ["TFT3_Vayne", "TFT3_Irelia"],
-            "traits": _get_traits(["TFT3_Leona", "TFT3_Fiora", "TFT3_Vi", "TFT3_Vayne", "TFT3_Riven",
-                                   "TFT3_Fizz", "TFT3_Irelia", "TFT3_Ekko", "TFT3_Thresh"]),
-            "main_traits": [
-                {'name': "Cybernetic", 'tier_current': 2}
-            ]
-        },
-        "Cybernetics_sub_Vayne_main": {
-            "parent_deck": "Cybernetics",
-            "deck_vector": _make_deck_vector(["TFT3_Caitlyn", "TFT3_Leona", "TFT3_Fiora", "TFT3_Vi", "TFT3_Vayne",
-                                              "TFT3_Fizz", "TFT3_Irelia", "TFT3_Ekko", "TFT3_Thresh"]),
-            "carry_champion": ["TFT3_Vayne", "TFT3_Irelia"],
-            "traits": _get_traits(["TFT3_Caitlyn", "TFT3_Leona", "TFT3_Fiora", "TFT3_Vi", "TFT3_Vayne", "TFT3_Fizz",
-                                   "TFT3_Irelia", "TFT3_Ekko", "TFT3_Thresh"]),
-            "main_traits": [
-                {'name': "Cybernetic", 'tier_current': 2}
-            ]
-        },
-
-        # Blaster_Brawler Family
-        "Blaster_Brawler": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_Graves", "TFT3_Illaoi", "TFT3_Blitzcrank", "TFT3_KogMaw",
-                                              "TFT3_Ezreal", "TFT3_Vi", "TFT3_Gnar", "TFT3_Jinx"]),
-            "carry_champion": ["TFT3_Jinx"],
-            "traits": _get_traits(["TFT3_Graves", "TFT3_Illaoi", "TFT3_Blitzcrank", "TFT3_KogMaw", "TFT3_Ezreal",
-                                   "TFT3_Vi", "TFT3_Gnar", "TFT3_Jinx"]),
-            "main_traits": [
-                {'name': "Blaster", 'tier_current': 2},
-                {'name': "Set3_Brawler", 'tier_current': 2}
-            ]
-        },
-        "Blaster_Brawler_sub_mystic": {
-            "parent_deck": "Blaster_Brawler",
-            "deck_vector": _make_deck_vector(["TFT3_Malphite", "TFT3_Blitzcrank", "TFT3_Ezreal", "TFT3_Vi", "TFT3_Gnar",
-                                              "TFT3_Jinx", "TFT3_Soraka", "TFT3_AurelionSol", "TFT3_Lulu"]),
-            "carry_champion": ["TFT3_Jinx", "TFT3_Gnar"],
-            "traits": _get_traits(["TFT3_Malphite", "TFT3_Blitzcrank", "TFT3_Ezreal", "TFT3_Vi", "TFT3_Gnar",
-                                   "TFT3_Jinx", "TFT3_Soraka", "TFT3_AurelionSol", "TFT3_Lulu"]),
-            "main_traits": [
-                {'name': "Blaster", 'tier_current': 1},
-                {'name': "Set3_Brawler", 'tier_current': 2},
-                {'name': "Set3_Mystic", 'tier_current': 2}
-            ]
-        },
-        "Blaster_Brawler_sub_chrono": {
-            "parent_deck": "Blaster_Brawler",
-            "deck_vector": _make_deck_vector(["TFT3_Malphite", "TFT3_Blitzcrank", "TFT3_Ezreal", "TFT3_Vi", "TFT3_Gnar",
-                                              "TFT3_Jinx", "TFT3_WuKong", "TFT3_AurelionSol", "TFT3_Thresh"]),
-            "carry_champion": ["TFT3_Jinx", "TFT3_Gnar", "TFT3_Thresh"],
-            "traits": _get_traits(["TFT3_Malphite", "TFT3_Blitzcrank", "TFT3_Ezreal", "TFT3_Vi", "TFT3_Gnar",
-                                   "TFT3_Jinx", "TFT3_WuKong", "TFT3_AurelionSol", "TFT3_Thresh"]),
-            "main_traits": [
-                {'name': "Blaster", 'tier_current': 1},
-                {'name': "Set3_Brawler", 'tier_current': 2},
-                {'name': "Chrono", 'tier_current': 1}
-            ]
-        },
-        "Blaster_Brawler_sub_Janna": {
-            "parent_deck": "Blaster_Brawler",
-            "deck_vector": _make_deck_vector(["TFT3_Malphite", "TFT3_Blitzcrank", "TFT3_Ezreal", "TFT3_Vi", "TFT3_Gnar",
-                                              "TFT3_Jinx", "TFT3_AurelionSol", "TFT3_Janna", "TFT3_Thresh"]),
-            "carry_champion": ["TFT3_Jinx", "TFT3_Gnar", "TFT3_Janna"],
-            "traits": _get_traits(["TFT3_Malphite", "TFT3_Blitzcrank", "TFT3_Ezreal", "TFT3_Vi", "TFT3_Gnar",
-                                   "TFT3_Jinx", "TFT3_AurelionSol", "TFT3_Janna", "TFT3_Thresh"]),
-            "main_traits": [
-                {'name': "Blaster", 'tier_current': 1},
-                {'name': "Set3_Brawler", 'tier_current': 2},
-                {'name': "Paragon", 'tier_current': 1}
-            ]
-        },
-        "Blaster_Brawler_sub_demolitionist": {
-            "parent_deck": "Blaster_Brawler",
-            "deck_vector": _make_deck_vector(["TFT3_Malphite", "TFT3_Ziggs", "TFT3_Blitzcrank", "TFT3_Ezreal", "TFT3_Vi",
-                                              "TFT3_Gnar", "TFT3_Jinx", "TFT3_AurelionSol", "TFT3_Gangplank"]),
-            "carry_champion": ["TFT3_Jinx", "TFT3_Gnar", "TFT3_Gangplank"],
-            "traits": _get_traits(["TFT3_Malphite", "TFT3_Ziggs", "TFT3_Blitzcrank", "TFT3_Ezreal", "TFT3_Vi",
-                                   "TFT3_Gnar", "TFT3_Jinx", "TFT3_AurelionSol", "TFT3_Gangplank"]),
-            "main_traits": [
-                {'name': "Blaster", 'tier_current': 1},
-                {'name': "Set3_Brawler", 'tier_current': 2},
-                {'name': "Demolitionist", 'tier_current': 1}
-            ]
-        },
-
-        "Jinx_Gangplank": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_Ziggs", "TFT3_Blitzcrank", "TFT3_Ezreal", "TFT3_Gnar", "TFT3_Jinx",
-                                              "TFT3_Soraka", "TFT3_AurelionSol", "TFT3_Gangplank", "TFT3_Lulu"]),
-            "carry_champion": ["TFT3_Jinx", "TFT3_Gangplank"],
-            "traits": _get_traits(["TFT3_Ziggs", "TFT3_Blitzcrank", "TFT3_Ezreal", "TFT3_Gnar", "TFT3_Jinx",
-                                   "TFT3_Soraka", "TFT3_AurelionSol", "TFT3_Gangplank", "TFT3_Lulu"]),
-            "main_traits": [
-                {'name': "Blaster", 'tier_current': 1},
-                {'name': "Set3_Brawler", 'tier_current': 1},
-                {'name': "Demolitionist", 'tier_current': 1},
-                {'name': "Set3_Mystic", 'tier_current': 1}
-            ]
-        },
-
-        # 6Blademaster Family
-        "6Blademaster": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_Shen", "TFT3_Yasuo", "TFT3_Zed", "TFT3_MasterYi", "TFT3_Irelia",
-                                              "TFT3_Riven", "TFT3_Fizz", "TFT3_Thresh"]),
-            "carry_champion": ["TFT3_Zed", "TFT3_MasterYi"],
-            "traits": _get_traits(["TFT3_Shen", "TFT3_Yasuo", "TFT3_Zed", "TFT3_MasterYi", "TFT3_Irelia",
-                                   "TFT3_Riven", "TFT3_Fizz", "TFT3_Thresh"], [18]),
-            "main_traits": [
-                {'name': "Set3_Blademaster", 'tier_current': 2},
-                {'name': "ManaReaver", 'tier_current': 1}
-            ]
-        },
-        "6Blademaster_sub_celestial": {
-            "parent_deck": "6Blademaster",
-            "deck_vector": _make_deck_vector(["TFT3_Xayah", "TFT3_Shen", "TFT3_Yasuo", "TFT3_Zed",
-                                              "TFT3_MasterYi", "TFT3_Riven", "TFT3_Fizz", "TFT3_Lulu"]),
-            "carry_champion": ["TFT3_Zed", "TFT3_MasterYi"],
-            "traits": _get_traits(["TFT3_Xayah", "TFT3_Shen", "TFT3_Yasuo", "TFT3_Zed",
-                                   "TFT3_MasterYi", "TFT3_Riven", "TFT3_Fizz", "TFT3_Lulu"], [18]),
-            "main_traits": [
-                {'name': "Set3_Blademaster", 'tier_current': 2},
-                {'name': "Set3_Celestial", 'tier_current': 1}
-            ]
-        },
-        "6Blademaster_sub_Ausol": {
-            "parent_deck": "6Blademaster",
-            "deck_vector": _make_deck_vector(["TFT3_Shen", "TFT3_Yasuo", "TFT3_Zed", "TFT3_MasterYi", "TFT3_Irelia",
-                                              "TFT3_Riven", "TFT3_Fizz", "TFT3_AurelionSol"]),
-            "carry_champion": ["TFT3_Zed", "TFT3_MasterYi"],
-            "traits": _get_traits(["TFT3_Shen", "TFT3_Yasuo", "TFT3_Zed", "TFT3_MasterYi", "TFT3_Irelia",
-                                   "TFT3_Riven", "TFT3_Fizz", "TFT3_AurelionSol"], [18]),
-            "main_traits": [
-                {'name': "Set3_Blademaster", 'tier_current': 2},
-                {'name': "Starship", 'tier_current': 1}
-            ]
-        },
-
-        "Battlecast_Brawler": {
-            "deck_vector": _make_deck_vector(["TFT3_Illaoi", "TFT3_Blitzcrank", "TFT3_Cassiopeia", "TFT3_Vi",
-                                              "TFT3_Gnar", "TFT3_Viktor", "TFT3_Urgot", "TFT3_Lulu"]),
+                [TFT4_Elise, TFT4_TwistedFate, TFT4_Pyke, TFT4_Evelynn, TFT4_Kalista,
+                 TFT4_Aatrox, TFT4_Jhin, TFT4_Zilean]),
             "carry_champion": [],
-            "traits": _get_traits(["TFT3_Illaoi", "TFT3_Blitzcrank", "TFT3_Cassiopeia", "TFT3_Vi", "TFT3_Gnar",
-                                   "TFT3_Viktor", "TFT3_Urgot", "TFT3_Lulu"]),
+            "traits": _get_traits([TFT4_Elise, TFT4_TwistedFate, TFT4_Pyke, TFT4_Evelynn, TFT4_Kalista,
+                                   TFT4_Aatrox, TFT4_Jhin, TFT4_Zilean], chosen="Cultist"),
             "main_traits": [
-                {'name': "Battlecast", 'tier_current': 2},
-                {'name': "Set3_Brawler", 'tier_current': 2}
+                {'name': "Cultist", 'tier_current': 3}
             ]
         },
 
-        # StarGuardian_Sorcerer Family
-        "StarGuardian_Sorcerer": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_Zoe", "TFT3_Ahri", "TFT3_Neeko", "TFT3_Syndra", "TFT3_Soraka",
-                                              "TFT3_Janna", "TFT3_Lulu", "TFT3_Xerath"]),
-            "carry_champion": ["TFT3_Neeko", "TFT3_Syndra"],
-            "traits": _get_traits(["TFT3_Zoe", "TFT3_Ahri", "TFT3_Neeko", "TFT3_Syndra", "TFT3_Soraka", "TFT3_Janna",
-                                   "TFT3_Lulu", "TFT3_Xerath"]),
-            "main_traits": [
-                {'name': "Set3_Sorcerer", 'tier_current': 2},
-                {'name': "StarGuardian", 'tier_current': 2}
-            ]
-        },
-        "StarGuardian_Sorcerer_sub_Viktor": {
-            "parent_deck": "StarGuardian_Sorcerer",
-            "deck_vector": _make_deck_vector(["TFT3_Poppy", "TFT3_TwistedFate", "TFT3_Zoe", "TFT3_Ahri", "TFT3_Syndra",
-                                              "TFT3_Viktor", "TFT3_WuKong", "TFT3_Janna"]),
-            "carry_champion": ["TFT3_Syndra", "TFT3_Viktor"],
-            "traits": _get_traits(["TFT3_Poppy", "TFT3_TwistedFate", "TFT3_Zoe", "TFT3_Ahri", "TFT3_Syndra",
-                                   "TFT3_Viktor", "TFT3_WuKong", "TFT3_Janna"], [48]),
-            "main_traits": [
-                {'name': "Set3_Sorcerer", 'tier_current': 2},
-                {'name': "StarGuardian", 'tier_current': 2}
-            ]
-        },
-        "StarGuardian_Sorcerer_sub_Vik_Ri": {
-            "parent_deck": "StarGuardian_Sorcerer",
-            "deck_vector": _make_deck_vector(["TFT3_TwistedFate", "TFT3_Zoe", "TFT3_Ahri", "TFT3_Annie", "TFT3_Syndra",
-                                              "TFT3_Riven", "TFT3_Soraka", "TFT3_Viktor", "TFT3_Janna"]),
-            "carry_champion": ["TFT3_Riven", "TFT3_Viktor"],
-            "traits": _get_traits(["TFT3_TwistedFate", "TFT3_Zoe", "TFT3_Ahri", "TFT3_Annie", "TFT3_Syndra",
-                                   "TFT3_Riven", "TFT3_Soraka", "TFT3_Viktor", "TFT3_Janna"], [48]),
-            "main_traits": [
-                {'name': "Set3_Sorcerer", 'tier_current': 3},
-                {'name': "StarGuardian", 'tier_current': 2}
-            ]
-        },
-
-        # 6Sorcerer Family
-        "6Sorcerer": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_TwistedFate", "TFT3_Zoe", "TFT3_Ahri", "TFT3_Syndra", "TFT3_Riven",
-                                              "TFT3_Viktor", "TFT3_Janna", "TFT3_Xerath"]),
-            "carry_champion": ["TFT3_Riven", "TFT3_Xerath"],
-            "traits": _get_traits(["TFT3_TwistedFate", "TFT3_Zoe", "TFT3_Ahri", "TFT3_Syndra", "TFT3_Riven",
-                                   "TFT3_Viktor", "TFT3_Janna", "TFT3_Xerath"]),
-            "main_traits": [
-                {'name': "Set3_Sorcerer", 'tier_current': 3},
-                {'name': "StarGuardian", 'tier_current': 1},
-                {'name': "Chrono", 'tier_current': 1}
-            ]
-        },
-        "6Sorcerer_sub_vanguard": {
-            "parent_deck": "6Sorcerer",
-            "deck_vector": _make_deck_vector(["TFT3_TwistedFate", "TFT3_Zoe", "TFT3_Ahri", "TFT3_Mordekaiser",
-                                              "TFT3_Syndra", "TFT3_Viktor", "TFT3_WuKong", "TFT3_Janna",
-                                              "TFT3_Xerath"]),
-            "carry_champion": ["TFT3_Janna", "TFT3_Xerath"],
-            "traits": _get_traits(["TFT3_TwistedFate", "TFT3_Zoe", "TFT3_Ahri", "TFT3_Mordekaiser", "TFT3_Syndra",
-                                   "TFT3_Viktor", "TFT3_WuKong", "TFT3_Janna", "TFT3_Xerath"]),
-            "main_traits": [
-                {'name': "Set3_Sorcerer", 'tier_current': 3},
-                {'name': "StarGuardian", 'tier_current': 1},
-                {'name': "Paragon", 'tier_current': 1}
-            ]
-        },
-        "6Sorcerer_sub_FiRi": {
-            "parent_deck": "6Sorcerer",
-            "deck_vector": _make_deck_vector(["TFT3_TwistedFate", "TFT3_Zoe", "TFT3_Ahri", "TFT3_Syndra", "TFT3_Fizz",
-                                              "TFT3_Riven", "TFT3_Viktor", "TFT3_Janna", "TFT3_Xerath"]),
-            "carry_champion": ["TFT3_Riven", "TFT3_Fizz"],
-            "traits": _get_traits(["TFT3_TwistedFate", "TFT3_Zoe", "TFT3_Ahri", "TFT3_Syndra", "TFT3_Fizz",
-                                   "TFT3_Riven", "TFT3_Viktor", "TFT3_Janna", "TFT3_Xerath"]),
-            "main_traits": [
-                {'name': "Set3_Sorcerer", 'tier_current': 3},
-                {'name': "StarGuardian", 'tier_current': 1},
-                {'name': "Paragon", 'tier_current': 1}
-            ]
-        },
-        "6Sorcerer_sub_FiKo": {
-            "parent_deck": "6Sorcerer",
-            "deck_vector": _make_deck_vector(["TFT3_TwistedFate", "TFT3_Zoe", "TFT3_Ahri", "TFT3_Syndra", "TFT3_Fizz",
-                                              "TFT3_Riven", "TFT3_Viktor", "TFT3_Ekko", "TFT3_Xerath"]),
-            "carry_champion": ["TFT3_Riven", "TFT3_Fizz", "TFT3_Ekko"],
-            "traits": _get_traits(["TFT3_TwistedFate", "TFT3_Zoe", "TFT3_Ahri", "TFT3_Syndra", "TFT3_Fizz",
-                                   "TFT3_Riven", "TFT3_Viktor", "TFT3_Ekko", "TFT3_Xerath"]),
-            "main_traits": [
-                {'name': "Set3_Sorcerer", 'tier_current': 3},
-                {'name': "StarGuardian", 'tier_current': 1},
-                {'name': "Paragon", 'tier_current': 1}
-            ]
-        },
-
-
-        "Celestial_Protector": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_Rakan", "TFT3_XinZhao", "TFT3_Ashe", "TFT3_Cassiopeia",
-                                              "TFT3_Neeko", "TFT3_Jhin", "TFT3_Lulu", "TFT3_Urgot"]),
-            "carry_champion": [],
-            "traits": _get_traits(["TFT3_Rakan", "TFT3_XinZhao", "TFT3_Ashe", "TFT3_Cassiopeia", "TFT3_Neeko",
-                                   "TFT3_Jhin", "TFT3_Lulu", "TFT3_Urgot"]),
-            "main_traits": [
-                {'name': "Set3_Celestial", 'tier_current': 2},
-                {'name': "Protector", 'tier_current': 2}
-            ]
-        },
-        "Celestial_6Protector": {
-            "parent_deck": "Celestial_Protector",
-            "deck_vector": _make_deck_vector(["TFT3_JarvanIV", "TFT3_Rakan", "TFT3_XinZhao", "TFT3_Ashe",
-                                              "TFT3_Cassiopeia", "TFT3_Neeko", "TFT3_Lulu", "TFT3_Urgot"]),
-            "carry_champion": [],
-            "traits": _get_traits(["TFT3_JarvanIV", "TFT3_Rakan", "TFT3_XinZhao", "TFT3_Ashe", "TFT3_Cassiopeia",
-                                   "TFT3_Neeko", "TFT3_Lulu", "TFT3_Urgot"], [78]),
-            "main_traits": [
-                {'name': "Set3_Celestial", 'tier_current': 2},
-                {'name': "Protector", 'tier_current': 3}
-            ]
-        },
-
-        "6DarkStar": {
-            "parent_deck": "self",
+        # Moonlight
+        "Moonlight": {
             "deck_vector": _make_deck_vector(
-                ["TFT3_JarvanIV", "TFT3_Mordekaiser", "TFT3_Ashe", "TFT3_Karma", "TFT3_Shaco",
-                 "TFT3_Jhin", "TFT3_Lulu", "TFT3_Xerath"]),
-            "carry_champion": ["TFT3_Jhin", "TFT3_Xerath"],
-            "traits": _get_traits(["TFT3_JarvanIV", "TFT3_Mordekaiser", "TFT3_Ashe", "TFT3_Karma", "TFT3_Shaco",
-                                   "TFT3_Jhin", "TFT3_Lulu", "TFT3_Xerath"]),
+                [TFT4_Lissandra, TFT4_Aphelios, TFT4_Sylas, TFT4_Kindred, TFT4_Yuumi, TFT4_Ashe, TFT4_Cassiopeia,
+                 TFT4_Warwick]),
+            "carry_champion": [TFT4_Aphelios],
+            "traits": _get_traits([TFT4_Lissandra, TFT4_Aphelios, TFT4_Sylas, TFT4_Kindred, TFT4_Yuumi, TFT4_Ashe, TFT4_Cassiopeia,
+                                   TFT4_Warwick]),
             "main_traits": [
-                {'name': "DarkStar", 'tier_current': 3}
+                {'name': Moonlight, 'tier_current': 1},
+                {'name': Hunter, 'tier_current': 3}
             ]
         },
 
-        "6Rebel": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_Malphite", "TFT3_Ziggs", "TFT3_Yasuo", "TFT3_Ezreal",
-                                              "TFT3_MasterYi", "TFT3_Jinx", "TFT3_AurelionSol", "TFT3_Gangplank"]),
-            "carry_champion": ["TFT3_Jinx", "TFT3_AurelionSol"],
-            "traits": _get_traits(["TFT3_Malphite", "TFT3_Ziggs", "TFT3_Yasuo", "TFT3_Ezreal",
-                                   "TFT3_MasterYi", "TFT3_Jinx", "TFT3_AurelionSol", "TFT3_Gangplank"]),
+        # elderwood family
+        "Elderwood 8Brawler": {
+            "deck_vector": _make_deck_vector(
+                [TFT4_Maokai, TFT4_TahmKench, TFT4_Sylas, TFT4_Vi, TFT4_Nunu, TFT4_Ashe, TFT4_Warwick, TFT4_Sett]),
+            "carry_champion": [TFT4_Ashe, TFT4_Sett],
+            "traits": _get_traits([TFT4_Maokai, TFT4_TahmKench, TFT4_Sylas, TFT4_Vi, TFT4_Nunu, TFT4_Ashe, TFT4_Warwick,
+                                   TFT4_Sett], chosen=Set4_Brawler),
             "main_traits": [
-                {'name': "Rebel", 'tier_current': 2}
+                {'name': Set4_Brawler, 'tier_current': 4},
+                {'name': Set4_Elderwood, 'tier_current': 1},
+                {'name': Hunter, 'tier_current': 1}
             ]
         },
 
-        "Mech_infiltrator": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_Nocturne", "TFT3_Ziggs", "TFT3_Annie", "TFT3_Zed", "TFT3_Rumble",
-                                              "TFT3_Shaco", "TFT3_Fizz", "TFT3_Viktor"]),
-            "carry_champion": ["TFT3_Zed", "TFT3_Shaco"],
-            "traits": _get_traits(["TFT3_Nocturne", "TFT3_Ziggs", "TFT3_Annie", "TFT3_Zed", "TFT3_Rumble",
-                                   "TFT3_Shaco", "TFT3_Fizz", "TFT3_Viktor"]),
+        "6Elderwood 4Brawler": {
+            "deck_vector": _make_deck_vector(
+                [TFT4_Maokai, TFT4_Hecarim, TFT4_Nunu, TFT4_Ashe, TFT4_Sejuani, TFT4_Warwick, TFT4_Sett, TFT4_Ezreal]),
+            "carry_champion": [TFT4_Ashe, TFT4_Sett],
+            "traits": _get_traits([TFT4_Maokai, TFT4_Hecarim, TFT4_Nunu, TFT4_Ashe, TFT4_Sejuani, TFT4_Warwick,
+                                   TFT4_Sett, TFT4_Ezreal], chosen=Set4_Elderwood),
             "main_traits": [
-                {'name': "Set3_Sorcerer", 'tier_current': 3},
-                {'name': "MechPilot", 'tier_current': 1}
+                {'name': Set4_Brawler, 'tier_current': 2},
+                {'name': Set4_Elderwood, 'tier_current': 2},
+                {'name': Hunter, 'tier_current': 1}
             ]
         },
 
-        "Mech_mage": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_Zoe", "TFT3_Ahri", "TFT3_Annie", "TFT3_Rumble", "TFT3_Syndra",
-                                              "TFT3_Fizz", "TFT3_Viktor", "TFT3_Xerath"]),
-            "carry_champion": ["TFT3_Viktor", "TFT3_Xerath"],
-            "traits": _get_traits(["TFT3_Zoe", "TFT3_Ahri", "TFT3_Annie", "TFT3_Rumble", "TFT3_Syndra",
-                                   "TFT3_Fizz", "TFT3_Viktor", "TFT3_Xerath"]),
+        "9Elderwood": {
+            "deck_vector": _make_deck_vector(
+                [TFT4_Maokai, TFT4_Hecarim, TFT4_Lulu, TFT4_Nunu, TFT4_Veigar, TFT4_Ashe, TFT4_Warwick, TFT4_Ezreal,
+                 TFT4_Sett]),
+            "carry_champion": [TFT4_Ashe, TFT4_Sett, TFT4_Ezreal],
+            "traits": _get_traits([TFT4_Maokai, TFT4_Hecarim, TFT4_Lulu, TFT4_Nunu, TFT4_Veigar, TFT4_Ashe,
+                                   TFT4_Warwick, TFT4_Ezreal, TFT4_Sett], items=[68], chosen=Set4_Elderwood),
             "main_traits": [
-                {'name': "Infiltrator", 'tier_current': 2},
-                {'name': "MechPilot", 'tier_current': 1}
+                {'name': Set4_Brawler, 'tier_current': 4},
+                {'name': Set4_Elderwood, 'tier_current': 1},
+                {'name': Hunter, 'tier_current': 1}
             ]
         },
 
-        "Mech_blaster": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_TwistedFate", "TFT3_Annie", "TFT3_Zed", "TFT3_Rumble",
-                                              "TFT3_Ezreal", "TFT3_Jinx", "TFT3_Fizz", "TFT3_Gangplank"]),
-            "carry_champion": ["TFT3_Jinx", "TFT3_Gangplank"],
-            "traits": _get_traits(["TFT3_TwistedFate", "TFT3_Annie", "TFT3_Zed", "TFT3_Rumble",
-                                   "TFT3_Ezreal", "TFT3_Jinx", "TFT3_Fizz", "TFT3_Gangplank"]),
+        # Sharpshooter
+        "6Sharpshooter": {
+            "deck_vector": _make_deck_vector(
+                [TFT4_Nidalee, TFT4_Vayne, TFT4_Teemo, TFT4_Jinx, TFT4_Yuumi, TFT4_Aatrox, TFT4_Jhin, TFT4_Sejuani,
+                 TFT4_Zilean]),
+            "carry_champion": [TFT4_Jinx, TFT4_Jhin],
+            "traits": _get_traits([TFT4_Nidalee, TFT4_Vayne, TFT4_Teemo, TFT4_Jinx, TFT4_Yuumi, TFT4_Aatrox, TFT4_Jhin,
+                                   TFT4_Sejuani, TFT4_Zilean], chosen=Sharpshooter),
             "main_traits": [
-                {'name': "Blaster", 'tier_current': 1},
-                {'name': "MechPilot", 'tier_current': 1},
-                {'name': "Demolitionist", 'tier_current': 1}
-            ]
-        },
-        "Mech_blaster_sub_rebel": {
-            "parent_deck": "Mech_blaster",
-            "deck_vector": _make_deck_vector(["TFT3_TwistedFate", "TFT3_Annie", "TFT3_Zed", "TFT3_Rumble", "TFT3_Ezreal",
-                                              "TFT3_Jinx", "TFT3_Fizz", "TFT3_Gangplank", "TFT3_AurelionSol"]),
-            "carry_champion": ["TFT3_Jinx", "TFT3_Gangplank"],
-            "traits": _get_traits(["TFT3_TwistedFate", "TFT3_Annie", "TFT3_Zed", "TFT3_Rumble",
-                                   "TFT3_Ezreal", "TFT3_Jinx", "TFT3_Fizz", "TFT3_Gangplank", "TFT3_AurelionSol"]),
-            "main_traits": [
-                {'name': "Blaster", 'tier_current': 1},
-                {'name': "MechPilot", 'tier_current': 1},
-                {'name': "Demolitionist", 'tier_current': 1},
-                {'name': "Rebel", 'tier_current': 1}
+                {'name': Sharpshooter, 'tier_current': 3},
+                {'name': Set4_Spirit, 'tier_current': 1},
+                {'name': Set4_Vanguard, 'tier_current': 1}
             ]
         },
 
-        "4SpacePirate": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_Graves", "TFT3_Ziggs", "TFT3_Darius", "TFT3_Jayce", "TFT3_Jinx",
-                                              "TFT3_WuKong", "TFT3_AurelionSol", "TFT3_Gangplank", "TFT3_Thresh"]),
-            "carry_champion": [],
-            "traits": _get_traits(["TFT3_Graves", "TFT3_Ziggs", "TFT3_Darius", "TFT3_Jayce", "TFT3_Jinx",
-                                   "TFT3_WuKong", "TFT3_AurelionSol", "TFT3_Gangplank", "TFT3_Thresh"]),
+        "6Sharpshooter 4Keeper": {
+            "deck_vector": _make_deck_vector(
+                [TFT4_Nidalee, TFT4_Vayne, TFT4_JarvanIV, TFT4_Teemo, TFT4_Jinx, TFT4_Kennen, TFT4_Jhin,
+                 TFT4_Riven, TFT4_Azir]),
+            "carry_champion": [TFT4_Jinx, TFT4_Jhin, TFT4_Riven],
+            "traits": _get_traits([TFT4_Nidalee, TFT4_Vayne, TFT4_JarvanIV, TFT4_Teemo, TFT4_Jinx, TFT4_Kennen,
+                                   TFT4_Jhin, TFT4_Riven, TFT4_Azir], chosen=Sharpshooter),
             "main_traits": [
-                {'name': "SpacePirate", 'tier_current': 2},
-                {'name': "Rebel", 'tier_current': 1},
-                {'name': "ManaReaver", 'tier_current': 1},
-                {'name': "Demolitionist", 'tier_current': 1}
+                {'name': Sharpshooter, 'tier_current': 3},
+                {'name': Keeper, 'tier_current': 2}
             ]
         },
-        "Chrono_Blademaster": {
-            "deck_vector": _make_deck_vector(["TFT3_Shen", "TFT3_Jayce", "TFT3_Irelia", "TFT3_Riven", "TFT3_Soraka",
-                                              "TFT3_WuKong", "TFT3_Lulu", "TFT3_Thresh"]),
-            "carry_champion": [],
-            "traits": _get_traits(["TFT3_Shen", "TFT3_Jayce", "TFT3_Irelia", "TFT3_Riven", "TFT3_Soraka",
-                                   "TFT3_WuKong", "TFT3_Lulu", "TFT3_Thresh"]),
+
+        "6Enlightened": {
+            "deck_vector": _make_deck_vector(
+                [TFT4_Nami, TFT4_Janna, TFT4_Pyke, TFT4_Irelia, TFT4_Lux, TFT4_Morgana, TFT4_Shen, TFT4_Talon]),
+            "carry_champion": [TFT4_Morgana, TFT4_Talon],
+            "traits": _get_traits([TFT4_Nami, TFT4_Janna, TFT4_Pyke, TFT4_Irelia, TFT4_Lux, TFT4_Morgana, TFT4_Shen,
+                                   TFT4_Talon]),
             "main_traits": [
-                {'name': "Set3_Blademaster", 'tier_current': 1},
-                {'name': "Chrono", 'tier_current': 2}
+                {'name': Set4_Enlightened, 'tier_current': 3},
+                {'name': Set4_Assassin, 'tier_current': 1}
             ]
         },
-        "Reroll_Zed": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_Nocturne", "TFT3_Rakan", "TFT3_XinZhao", "TFT3_Zed",
-                                              "TFT3_Cassiopeia", "TFT3_Karma", "TFT3_Shaco", "TFT3_Fizz"]),
-            "carry_champion": ["TFT3_Zed"],
-            "traits": _get_traits(["TFT3_Nocturne", "TFT3_Rakan", "TFT3_XinZhao", "TFT3_Zed", "TFT3_Cassiopeia",
-                                   "TFT3_Karma", "TFT3_Shaco", "TFT3_Fizz"]),
+
+        # Zed carry
+        "Spirit Shade": {
+            "deck_vector": _make_deck_vector(
+                [TFT4_Teemo, TFT4_Zed, TFT4_Evelynn, TFT4_Kindred, TFT4_Yuumi, TFT4_Ahri, TFT4_Kayn]),
+            "carry_champion": [TFT4_Zed],
+            "traits": _get_traits([TFT4_Teemo, TFT4_Zed, TFT4_Evelynn, TFT4_Kindred, TFT4_Yuumi, TFT4_Ahri, TFT4_Kayn]),
             "main_traits": [
-                {'name': "Infiltrator", 'tier_current': 2},
-                {'name': "Set3_Celestial", 'tier_current': 1}
+                {'name': Set4_Shade, 'tier_current': 2},
+                {'name': Set4_Spirit, 'tier_current': 2}
             ]
         },
-        "Mystic_Vanguard": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_Mordekaiser", "TFT3_Nautilus", "TFT3_Cassiopeia", "TFT3_Jayce",
-                                              "TFT3_Karma", "TFT3_Soraka", "TFT3_WuKong", "TFT3_Lulu"]),
-            "carry_champion": ["TFT3_Cassiopeia", "TFT3_Jayce"],
-            "traits": _get_traits(["TFT3_Mordekaiser", "TFT3_Nautilus", "TFT3_Cassiopeia", "TFT3_Jayce",
-                                   "TFT3_Karma", "TFT3_Soraka", "TFT3_WuKong", "TFT3_Lulu"]),
+
+        "Ninja Shade": {
+            "deck_vector": _make_deck_vector(
+                [TFT4_Pyke, TFT4_Zed, TFT4_Akali, TFT4_Evelynn, TFT4_Kennen, TFT4_Shen, TFT4_Kayn, TFT4_Zilean]),
+            "carry_champion": [TFT4_Zed, TFT4_Evelynn],
+            "traits": _get_traits([TFT4_Pyke, TFT4_Zed, TFT4_Akali, TFT4_Evelynn, TFT4_Kennen, TFT4_Shen, TFT4_Kayn,
+                                   TFT4_Zilean]),
             "main_traits": [
-                {'name': "Set3_Mystic", 'tier_current': 2},
-                {'name': "Vanguard", 'tier_current': 2}
+                {'name': Set4_Ninja, 'tier_current': 2},
+                {'name': Set4_Shade, 'tier_current': 3}
             ]
         },
-        "Mystic_Protector": {
-            "parent_deck": "self",
-            "deck_vector": _make_deck_vector(["TFT3_Rakan", "TFT3_XinZhao", "TFT3_Cassiopeia", "TFT3_Karma",
-                                              "TFT3_Neeko", "TFT3_Soraka", "TFT3_Lulu", "TFT3_Urgot"]),
-            "carry_champion": ["TFT3_XinZhao", "TFT3_Cassiopeia", "TFT3_Urgot"],
-            "traits": _get_traits(["TFT3_Rakan", "TFT3_XinZhao", "TFT3_Cassiopeia", "TFT3_Karma",
-                                   "TFT3_Neeko", "TFT3_Soraka", "TFT3_Lulu", "TFT3_Urgot"]),
+
+        # Nin Am
+        "Ninja Assassin": {
+            "deck_vector": _make_deck_vector(
+                [TFT4_Diana, TFT4_Pyke, TFT4_Zed, TFT4_Akali, TFT4_Katarina, TFT4_Kennen, TFT4_Shen, TFT4_Talon]),
+            "carry_champion": [TFT4_Akali, TFT4_Talon],
+            "traits": _get_traits([TFT4_Diana, TFT4_Pyke, TFT4_Zed, TFT4_Akali, TFT4_Katarina, TFT4_Kennen, TFT4_Shen,
+                                   TFT4_Talon], chosen=Set4_Assassin),
             "main_traits": [
-                {'name': "Set3_Mystic", 'tier_current': 2},
-                {'name': "Protector", 'tier_current': 2}
+                {'name': Set4_Ninja, 'tier_current': 2},
+                {'name': Set4_Assassin, 'tier_current': 3}
+            ]
+        },
+
+        "6Duelist": {
+            "deck_vector": _make_deck_vector(
+                [TFT4_Fiora, TFT4_Yasuo, TFT4_Jax, TFT4_Kalista, TFT4_XinZhao,
+                 TFT4_Shen, TFT4_LeeSin, TFT4_Yone]),
+            "carry_champion": [TFT4_Kalista, TFT4_Yone],
+            "traits": _get_traits([TFT4_Fiora, TFT4_Yasuo, TFT4_Jax, TFT4_Kalista, TFT4_XinZhao,
+                                   TFT4_Shen, TFT4_LeeSin, TFT4_Yone]),
+            "main_traits": [
+                {'name': "Duelist", 'tier_current': 3},
+                {'name': "Set4_Exile", 'tier_current': 2}
+            ]
+        },
+        "Spirit 6Mage": {
+            "deck_vector": _make_deck_vector(
+                ["TFT4_Nami", "TFT4_Annie", "TFT4_Lulu", "TFT4_Veigar", "TFT4_Yuumi",
+                 "TFT4_Ahri", "TFT4_Cassiopeia", "TFT4_Lillia"]),
+            "carry_champion": ["TFT4_Ahri"],
+            "traits": _get_traits(["TFT4_Nami", "TFT4_Annie", "TFT4_Lulu", "TFT4_Veigar", "TFT4_Yuumi",
+                                   "TFT4_Ahri", "TFT4_Cassiopeia", "TFT4_Lillia"]),
+            "main_traits": [
+                {'name': "Set4_Spirit", 'tier_current': 1},
+                {'name': "Set4_Mage", 'tier_current': 2}
             ]
         }
     }
@@ -895,56 +571,17 @@ class Deck:
         if max_std_similarity > 0.7:
             if max_std_similarity > self.completion_criteria:
                 self.is_accomplished = True
-
             elif len(self.champions) >= 8:
                 is_trait_accomplished = True
                 for main_trait in self.Metas[meta_name]["main_traits"]:
-                    if main_trait["name"] not in self.trait_names:
+                    if main_trait["key"] not in self.trait_names:
                         is_trait_accomplished = False
                         break
 
-                    d_trait = self.traits[self.trait_names.index(main_trait["name"])]
+                    d_trait = self.traits[self.trait_names.index(main_trait["key"])]
                     if d_trait["tier_current"] < main_trait["tier_current"]:
                         is_trait_accomplished = False
                         break
                 self.is_accomplished = is_trait_accomplished
-
             return meta_name, max_std_similarity
         return "etc", 0
-
-
-'''
-    "StarGuardian_Sorcerer": {
-        "deck_vector": _make_deck_vector(["TFT3_Zoe", "TFT3_Poppy", "TFT3_Ahri", "TFT3_Sona", "TFT3_Neeko",
-                                          "TFT3_Syndra", "TFT3_VelKoz", "TFT3_Soraka"]),
-        "carry_champion": ["TFT3_Sona", "TFT3_Syndra"],
-        "traits": _get_traits(["TFT3_Zoe", "TFT3_Poppy", "TFT3_Ahri", "TFT3_Sona", "TFT3_Neeko",
-                               "TFT3_Syndra", "TFT3_VelKoz", "TFT3_Soraka"]),
-        "main_traits": [
-            {'name': "Set3_Sorcerer", 'tier_current': 2},
-            {'name': "StarGuardian", 'tier_current': 2}
-        ]
-    },
-    "DarkStar_Sniper": {
-        "deck_vector": _make_deck_vector(["TFT3_Mordekaiser", "TFT3_Ashe", "TFT3_Karma", "TFT3_Lux", "TFT3_Shaco",
-                                          "TFT3_Jhin", "TFT3_Lulu", "TFT3_Xerath"]),
-        "carry_champion": ["TFT3_Jhin", "TFT3_Xerath"],
-        "traits": _get_traits(["TFT3_Mordekaiser", "TFT3_Ashe", "TFT3_Karma", "TFT3_Lux", "TFT3_Shaco",
-                               "TFT3_Jhin", "TFT3_Lulu", "TFT3_Xerath"]),
-        "main_traits": [
-            {'name': "DarkStar", 'tier_current': 2},
-            {'name': "Sniper", 'tier_current': 1}
-        ]
-    },
-    "Health_Deck": {
-        "deck_vector": _make_deck_vector(["TFT3_JarvanIV", "TFT3_Rakan", "TFT3_Sona", "TFT3_XinZhao", "TFT3_Karma",
-                                          "TFT3_Neeko", "TFT3_Soraka", "TFT3_Lulu"]),
-        "carry_champion": ["TFT3_XinZhao"],
-        "traits": _get_traits(["TFT3_JarvanIV", "TFT3_Rakan", "TFT3_Sona", "TFT3_XinZhao", "TFT3_Karma",
-                               "TFT3_Neeko", "TFT3_Soraka", "TFT3_Lulu"]),
-        "main_traits": [
-            {'name': "Set3_Mystic", 'tier_current': 2},
-            {'name': "Protector", 'tier_current': 2}
-        ]
-    }
-'''
